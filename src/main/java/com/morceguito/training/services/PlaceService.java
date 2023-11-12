@@ -1,5 +1,6 @@
 package com.morceguito.training.services;
 
+import com.github.slugify.Slugify;
 import com.morceguito.training.dtos.PlaceRequest;
 import com.morceguito.training.entities.Place;
 import com.morceguito.training.repositories.PlaceRepository;
@@ -9,13 +10,15 @@ import reactor.core.publisher.Mono;
 @Service
 public class PlaceService {
     private final PlaceRepository placeRepository;
+    private final Slugify slg;
 
-    public PlaceService(PlaceRepository placeRepository) {
+    public PlaceService(PlaceRepository placeRepository, Slugify slg) {
         this.placeRepository = placeRepository;
+        this.slg = Slugify.builder().build();
     }
 
     public Mono<Place> createPlace(PlaceRequest placeRequest){
-        Place place = new Place(null, placeRequest.name(), placeRequest.slug(), placeRequest.state(),
+        Place place = new Place(null, placeRequest.name(), slg.slugify(placeRequest.name()), placeRequest.state(),
                 placeRequest.createdAt(),placeRequest.updatedAt());
         return placeRepository.save(place);
     }
