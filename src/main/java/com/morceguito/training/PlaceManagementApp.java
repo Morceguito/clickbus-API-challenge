@@ -1,6 +1,6 @@
-package org.example;
+package com.morceguito.training;
 
-public class Main {
+public class PlaceManagementApp {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
