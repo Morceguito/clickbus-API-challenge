@@ -5,6 +5,7 @@ import com.morceguito.training.dtos.PlaceRequest;
 import com.morceguito.training.entities.Place;
 import com.morceguito.training.repositories.PlaceRepository;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
@@ -21,6 +22,14 @@ public class PlaceService {
         Place place = new Place(null, placeRequest.name(), slg.slugify(placeRequest.name()), placeRequest.state(),
                 null,null);
         return placeRepository.save(place);
+    }
+
+    public Flux<Place> getAllPlaces(){
+        return placeRepository.findAll();
+    }
+
+    public Mono<Place> getBySlug(String slug){
+        return placeRepository.findBySlug(slug);
     }
 
 }
