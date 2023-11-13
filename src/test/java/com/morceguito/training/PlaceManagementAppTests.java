@@ -1,6 +1,7 @@
 package com.morceguito.training;
 
 import com.morceguito.training.dtos.PlaceRequest;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,6 +12,11 @@ public class PlaceManagementAppTests {
 
     @Autowired
     WebTestClient webTestClient;
+
+    @BeforeAll
+    public static void setup(){
+
+    }
 
     @Test
     public void testCreatePlaceSuccess() {
@@ -31,5 +37,29 @@ public class PlaceManagementAppTests {
                 .jsonPath("slug").isEqualTo(slug)
                 .jsonPath("createdAt").isNotEmpty()
                 .jsonPath("updatedAt").isNotEmpty();
+    }
+
+    @Test
+    public void testGetAllPlacesSuccess() {
+        webTestClient
+                .get()
+                .uri("places")
+                .exchange()
+                .expectStatus().isOk();
+    }
+
+    @Test
+    public void testCreatePlaceFailure() {
+        String name = "";
+        String state = "";
+
+        webTestClient
+                .post()
+                .uri("places")
+                .bodyValue(
+                        new PlaceRequest(name,state)
+                )
+                .exchange()
+                .expectStatus().isBadRequest();
     }
 }
