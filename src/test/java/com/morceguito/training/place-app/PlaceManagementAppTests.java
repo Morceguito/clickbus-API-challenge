@@ -22,18 +22,20 @@ public class PlaceManagementAppTests {
     public void testCreatePlaceSuccess() {
         String name = "Valid Name";
         String state = "Valid state";
+        String city = "Valid city";
         String slug = "valid-name";
 
         webTestClient
                 .post()
                 .uri("places")
                 .bodyValue(
-                        new PlaceRequest(name,state)
+                        new PlaceRequest(name,state,city)
                 )
                 .exchange()
                 .expectBody()
                 .jsonPath("name").isEqualTo(name)
                 .jsonPath("state").isEqualTo(state)
+                .jsonPath("city").isEqualTo(city)
                 .jsonPath("slug").isEqualTo(slug)
                 .jsonPath("createdAt").isNotEmpty()
                 .jsonPath("updatedAt").isNotEmpty();
@@ -52,12 +54,13 @@ public class PlaceManagementAppTests {
     public void testCreatePlaceFailure() {
         String name = "";
         String state = "";
+        String city = "";
 
         webTestClient
                 .post()
                 .uri("places")
                 .bodyValue(
-                        new PlaceRequest(name,state)
+                        new PlaceRequest(name,state,city)
                 )
                 .exchange()
                 .expectStatus().isBadRequest();
