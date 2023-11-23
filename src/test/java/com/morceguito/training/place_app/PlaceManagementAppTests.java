@@ -1,6 +1,6 @@
-package com.morceguito.training;
+package com.morceguito.training.place_app;
 
-import com.morceguito.training.dtos.PlaceRequest;
+import com.morceguito.training.place_app.dtos.PlaceRequest;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
