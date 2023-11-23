@@ -1,4 +1,4 @@
-package com.morceguito.training.config;
+package com.morceguito.training.place_app.config;
 
 import com.github.slugify.Slugify;
 import org.springframework.context.annotation.Bean;

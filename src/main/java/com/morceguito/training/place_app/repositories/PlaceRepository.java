@@ -1,6 +1,6 @@
-package com.morceguito.training.repositories;
+package com.morceguito.training.place_app.repositories;
 
-import com.morceguito.training.entities.Place;
+import com.morceguito.training.place_app.entities.Place;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;

@@ -1,4 +1,4 @@
-package com.morceguito.training;
+package com.morceguito.training.place_app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

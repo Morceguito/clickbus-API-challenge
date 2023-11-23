@@ -1,4 +1,4 @@
-package com.morceguito.training.dtos;
+package com.morceguito.training.place_app.dtos;
 
 
 import jakarta.validation.constraints.NotBlank;

@@ -1,4 +1,4 @@
-package com.morceguito.training.entities;
+package com.morceguito.training.place_app.entities;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;

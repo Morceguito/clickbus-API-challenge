@@ -1,13 +1,13 @@
-package com.morceguito.training.services;
+package com.morceguito.training.place_app.services;
 
 import com.github.slugify.Slugify;
-import com.morceguito.training.dtos.PlaceRequest;
-import com.morceguito.training.entities.Place;
-import com.morceguito.training.repositories.PlaceRepository;
+import com.morceguito.training.place_app.dtos.PlaceRequest;
+import com.morceguito.training.place_app.entities.Place;
+import com.morceguito.training.place_app.repositories.PlaceRepository;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import com.morceguito.training.mappers.PlaceMapper;
+import com.morceguito.training.place_app.mappers.PlaceMapper;
 
 @Service
 public class PlaceService {

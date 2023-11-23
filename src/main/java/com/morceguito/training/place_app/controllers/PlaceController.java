@@ -1,9 +1,9 @@
-package com.morceguito.training.controllers;
+package com.morceguito.training.place_app.controllers;
 
-import com.morceguito.training.dtos.PlaceRequest;
-import com.morceguito.training.dtos.PlaceResponse;
-import com.morceguito.training.mappers.PlaceMapper;
-import com.morceguito.training.services.PlaceService;
+import com.morceguito.training.place_app.dtos.PlaceRequest;
+import com.morceguito.training.place_app.dtos.PlaceResponse;
+import com.morceguito.training.place_app.mappers.PlaceMapper;
+import com.morceguito.training.place_app.services.PlaceService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

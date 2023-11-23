@@ -1,9 +1,9 @@
-package com.morceguito.training.mappers;
+package com.morceguito.training.place_app.mappers;
 
-import com.morceguito.training.dtos.PlaceResponse;
-import com.morceguito.training.entities.Place;
+import com.morceguito.training.place_app.dtos.PlaceResponse;
+import com.morceguito.training.place_app.entities.Place;
 import org.springframework.util.StringUtils;
-import com.morceguito.training.dtos.PlaceRequest;
+import com.morceguito.training.place_app.dtos.PlaceRequest;
 
 public class PlaceMapper {
     public static PlaceResponse fromPlaceToResponse(Place place){
